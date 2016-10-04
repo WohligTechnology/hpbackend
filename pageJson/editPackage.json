@@ -1,0 +1,98 @@
+{
+    "title": "Edit Package",
+    "jsonPage": "viewPackage",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    }, {
+        "name": "Package Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "name"
+    },{
+        "name": "Duration",
+        "type": "text",
+        "tableRef": "duration",
+        "placeholder": "Enter Duration",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "duration"
+    },{
+        "name": "Price",
+        "type": "text",
+        "tableRef": "price",
+        "placeholder": "Enter Price",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "price"
+    }, {
+        "name": "City",
+        "type": "selectFromTable",
+        "option":"single",
+        "tableRef": "city",
+        "dropDownName":"cityName",
+        "model":"city",
+        "placeholder": "Enter Category-Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "City/search"
+    },{
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "model": "status",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitPackage"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewPackage'})"
+    }],
+    "apiCall": {
+        "url": "Package/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Package/getOne",
+        "params": "_id"
+    },
+    "sidemenu": [{
+          "name": "Destination",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editDestination",
+          "fieldsToSend": [1],
+          "callFindOne": "Destination/getOne"
+      }, {
+          "name": "Package Details",
+          "action": "sidemenuRedirect",
+          "jsonPage": "viewPack",
+          "fieldsToSend": [1],
+          "callFindOne": "Destination/getPack"
+      }]
+}

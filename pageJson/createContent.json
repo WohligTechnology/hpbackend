@@ -1,0 +1,49 @@
+{
+    "title": "Create Content",
+    "jsonPage": "viewContent",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Destination"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Description",
+        "type": "tinymceImage",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "placeholder": "Enter Type",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": "true",
+            "name": "true"
+        }, {
+            "value": "false",
+            "name": "false"
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitContent"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewContent'})"
+    }],
+
+    "apiCall": {
+        "url": "Destination/saveContent"
+    }
+}

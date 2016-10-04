@@ -1,0 +1,66 @@
+{
+    "title": "Create Package",
+    "jsonPage": "viewPackage",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "Package Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Duration",
+        "type": "text",
+        "tableRef": "duration",
+        "placeholder": "Enter Duration",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Price",
+        "type": "text",
+        "tableRef": "price",
+        "placeholder": "Enter Price",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "City",
+        "type": "selectFromTable",
+        "option":"single",
+        "tableRef": "city",
+        "dropDownName":"cityName",
+        "placeholder": "Enter Category-Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "City/search"
+    }, {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitPackage"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewPackage'})"
+    }],
+
+    "apiCall": {
+        "url": "Package/save"
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "title": "What's Hot",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Banner",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "banner"
+    },{
+        "name": "CruiseRate",
+        "isSort": "",
+        "tableRef": "cruiserate"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editWhatsHot",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "WhatsHot/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete WhatsHot?",
+        "api": "WhatsHot/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "WhatsHot/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createWhatsHot'})"
+}

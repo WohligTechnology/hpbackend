@@ -1,0 +1,57 @@
+{
+    "title": "View Pack",
+    "desciption": "",
+    "sendIdWithCreate": true,
+    "pageType": "view",
+    "fields": [{
+        "name": "Day",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "day"
+    },{
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editPack",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Package/getOnePack"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Pack",
+        "content": "Are you sure you want to delete Pack?",
+        "api": "Package/deletePack",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Package/getPack",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createPack'})",
+    "sidemenu": [{
+          "name": "Package",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editPackage",
+          "fieldsToSend": [1],
+          "callFindOne": "Package/getOne"
+      },{
+            "name": "Package Details",
+            "action": "sidemenuRedirect",
+            "jsonPage": "viewPack",
+            "fieldsToSend": [1],
+            "callFindOne": "Package/getPack"
+        }]
+
+}

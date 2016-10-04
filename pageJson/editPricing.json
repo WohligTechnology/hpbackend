@@ -1,0 +1,68 @@
+{
+    "title": "Edit Pricing",
+    "jsonPage": "viewPricing",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    },{
+        "name": "Paxcabin1",
+        "type": "text",
+        "tableRef": "paxcabin1",
+        "placeholder": "Enter Paxcabin1",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "paxcabin1"
+    },{
+        "name": "Paxcabin2",
+        "type": "text",
+        "tableRef": "paxcabin2",
+        "placeholder": "Enter Paxcabin2",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "paxcabin2"
+    },{
+        "name": "Paxcabin3",
+        "type": "text",
+        "tableRef": "paxcabin3",
+        "placeholder": "Enter Paxcabin3",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "paxcabin3"
+    },{
+        "name": "Text",
+        "type": "text",
+        "tableRef": "text",
+        "placeholder": "Enter Text",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "text"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitPricing"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewPricing'})"
+    }],
+    "apiCall": {
+        "url": "WhatsHot/savePricing",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "WhatsHot/getOnePricing",
+        "params": "_id"
+    }
+}

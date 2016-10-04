@@ -1,0 +1,53 @@
+{
+    "title": "Package",
+    "desciption": "",
+    "sendIdWithCreate": true,
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "type":"text",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Duration",
+        "type":"text",
+        "isSort": "",
+        "tableRef": "duration"
+    },{
+        "name": "Price",
+        "type":"text",
+        "isSort": "",
+        "tableRef": "price"
+    },{
+        "name": "Status",
+        "type": "status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editPackage",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Package/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Package",
+        "content": "Are you sure you want to delete Package?",
+        "api": "Package/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Package/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createPackage'})"
+}

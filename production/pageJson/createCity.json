@@ -1,0 +1,66 @@
+{
+    "title": "Create City",
+    "jsonPage": "viewCity",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "City Name",
+        "type": "text",
+        "tableRef": "cityName",
+        "placeholder": "Enter City Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Country Name",
+        "type": "text",
+        "tableRef": "country",
+        "placeholder": "Enter City Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Content",
+        "type": "tinymce",
+        "tableRef": "content",
+        "placeholder": "Enter Description",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "size":"1920 X 963",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitCity"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewCity'})"
+    }],
+
+    "apiCall": {
+        "url": "City/save"
+    }
+}

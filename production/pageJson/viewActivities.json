@@ -1,0 +1,47 @@
+{
+    "title": "View Activities",
+    "desciption": "",
+    "sendIdWithCreate": true,
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image1"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editActivities",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Activities/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Activities",
+        "content": "Are you sure you want to delete Activities?",
+        "api": "Activities/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Activities/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createActivities'})"
+}

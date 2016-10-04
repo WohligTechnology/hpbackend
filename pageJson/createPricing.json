@@ -1,0 +1,51 @@
+{
+    "title": "Create Images",
+    "jsonPage": "viewImages",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["WhatsHot"],
+    "fields": [{
+        "name": "Paxcabin1",
+        "type": "text",
+        "tableRef": "paxcabin1",
+        "placeholder": "Enter Paxcabin1",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Paxcabin2",
+        "type": "text",
+        "tableRef": "paxcabin2",
+        "placeholder": "Enter Paxcabin2",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Paxcabin3",
+        "type": "text",
+        "tableRef": "paxcabin3",
+        "placeholder": "Enter Paxcabin3",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Text",
+        "type": "text",
+        "tableRef": "text",
+        "placeholder": "Enter Text",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitImages"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewPricing'})"
+    }],
+
+    "apiCall": {
+        "url": "WhatsHot/savePricing"
+    }
+}
