@@ -3,7 +3,7 @@
     "jsonPage": "viewContent",
     "desciption": "",
     "pageType": "create",
-    "urlFields": ["Destination"],
+    "urlFields": ["Metal"],
     "fields": [{
         "name": "Name",
         "type": "text",
@@ -44,6 +44,6 @@
     }],
 
     "apiCall": {
-        "url": "Destination/saveContent"
+        "url": "Metal/saveContent"
     }
 }

@@ -1,5 +1,5 @@
-var adminurl = "http://104.155.129.33:1337/";
-var adminurl = "http://localhost:1337/";
+var adminurl = "http://104.155.129.33:89/";
+// var adminurl = "http://localhost:1337/";
 
 var uploadurl = adminurl + "upload/";
 var imgpath = uploadurl + "readFile/";
@@ -17,36 +17,29 @@ var navigationservice = angular.module('navigationservice', [])
         link: "#/page/viewCategory",
         subnav: []
     },{
-        name: "Package",
+        name: "Reaction",
         classis: "active",
-        link: "#/page/viewPackage",
-        subnav: []
-    },
-    {
-        name: "Destination",
-        classis: "active",
-        link: "#/page/viewDestination",
+        link: "#/page/viewReaction",
         subnav: []
     },{
-        name: "City",
+        name: "Metal",
         classis: "active",
-        link: "#/page/viewCity",
+        link: "#/page/viewMetal",
         subnav: []
     },{
-        name: "What's Hot",
+        name: "Know Catalyst",
         classis: "active",
-        link: "#/page/viewWhatsHot",
-        subnav: []
-    },
-    {
-        name: "Subscribe",
-        classis: "active",
-        link: "#/page/viewSubscribe",
+        link: "#/page/viewKnowCat",
         subnav: []
     },{
         name: "Media",
         classis: "active",
         link: "#/page/viewMedia",
+        subnav: []
+    },{
+        name: "AboutUs",
+        classis: "active",
+        link: "#/page/viewAboutUs",
         subnav: []
     }];
 

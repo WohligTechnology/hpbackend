@@ -1,17 +1,35 @@
 {
-    "title": "Create PopularPost",
-    "jsonPage": "viewTags",
+    "title": "Create AboutUs",
+    "jsonPage": "viewAboutUs",
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "Name",
+        "name": "name",
         "type": "text",
         "tableRef": "name",
-        "placeholder": "Enter Name",
+        "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
+    },{
+    "name": "Banner",
+    "type": "image",
+    "tableRef": "banner",
+    "option": "single",
+    "size":"1920 X 963..",
+    "placeholder": "Enter Banner",
+    "id": "input1",
+    "validation": ["required", "trim", "unique"],
+    "url": ""
+    },{
+        "name": "Description",
+        "type": "tinymceImage",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
         "name": "Status",
         "type": "select",
         "tableRef": "status",
@@ -31,10 +49,10 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewTags'})"
+        "stateName": "page({jsonName:'viewAboutUs'})"
     }],
 
     "apiCall": {
-        "url": "Tags/savedata"
+        "url": "AboutUs/save"
     }
 }

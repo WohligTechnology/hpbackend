@@ -1,16 +1,14 @@
 {
-    "title": "Create Images",
-    "jsonPage": "viewImages",
+    "title": "Create Metal",
+    "jsonPage": "viewMetal",
     "desciption": "",
     "pageType": "create",
-    "urlFields": ["WhatsHot"],
+    "urlFields": ["Metal"],
     "fields": [{
-        "name": "Image",
-        "type": "image",
-        "option":"single",
-        "size": "413 x 413",
-        "tableRef": "image",
-        "placeholder": "Enter Image",
+        "name": "name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
@@ -31,13 +29,13 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitImages"
+        "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewImages'})"
+        "stateName": "page({jsonName:'viewMetal'})"
     }],
 
     "apiCall": {
-        "url": "WhatsHot/saveImages"
+        "url": "Metal/save"
     }
 }

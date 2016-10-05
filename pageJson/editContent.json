@@ -55,11 +55,11 @@
         "stateName": "page({jsonName:'viewContent'})"
     }],
     "apiCall": {
-        "url": "Destination/saveContent",
+        "url": "Metal/saveContent",
         "params": "_id"
     },
     "preApi": {
-        "url": "Destination/getOneContent",
+        "url": "Metal/getOneContent",
         "params": "_id"
     }
 }

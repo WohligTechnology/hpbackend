@@ -1,26 +1,20 @@
 {
-    "title": "Package",
+    "title": "AboutUs",
     "desciption": "",
-    "sendIdWithCreate": true,
     "pageType": "view",
     "fields": [{
         "name": "Name",
-        "type":"text",
+        "type": "text",
         "isSort": "",
         "tableRef": "name"
-    },{
-        "name": "Duration",
-        "type":"text",
+    }, {
+        "name": "Banner",
+        "type": "image",
         "isSort": "",
-        "tableRef": "duration"
-    },{
-        "name": "Price",
-        "type":"text",
-        "isSort": "",
-        "tableRef": "price"
+        "tableRef": "banner"
     },{
         "name": "Status",
-        "type": "status",
+        "type": "text",
         "isSort": "",
         "tableRef": "status"
     }],
@@ -29,25 +23,25 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editPackage",
+        "jsonPage": "editAboutUs",
         "fieldsToSend": ["_id"],
-        "callFindOne": "Package/getone"
+        "callFindOne": "AboutUs/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Package",
-        "content": "Are you sure you want to delete Package?",
-        "api": "Package/delete",
+        "title": "Delete AboutUs",
+        "content": "Are you sure you want to delete AboutUs?",
+        "api": "AboutUs/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
         }]
     }],
     "apiCall": {
-        "url": "Package/search",
+        "url": "AboutUs/search",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createPackage'})"
+    "createButtonState": "page({jsonName:'createAboutUs'})"
 }

@@ -1,22 +1,18 @@
 {
-    "title": "View Blogs",
+    "title": "Know Your Catalyst",
     "desciption": "",
     "pageType": "view",
+    "sortable": "KnowCat/sort",
     "fields": [{
         "name": "Name",
         "type": "text",
         "isSort": "",
         "tableRef": "name"
     }, {
-        "name": "Image",
+        "name": "Banner",
         "type": "image",
         "isSort": "",
-        "tableRef": "image"
-    },{
-        "name": "Video",
-        "type": "text",
-        "isSort": "",
-        "tableRef": "video"
+        "tableRef": "banner"
     },{
         "name": "Status",
         "type": "text",
@@ -28,25 +24,25 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editBlog",
+        "jsonPage": "editKnowCat",
         "fieldsToSend": ["_id"],
-        "callFindOne": "blog/getone"
+        "callFindOne": "KnowCat/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Blog",
-        "content": "Are you sure you want to delete Blog?",
-        "api": "blog/delete",
+        "title": "Delete KnowCat",
+        "content": "Are you sure you want to delete KnowCat?",
+        "api": "KnowCat/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
         }]
     }],
     "apiCall": {
-        "url": "Blog/getLimited",
+        "url": "KnowCat/search",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createBlog'})"
+    "createButtonState": "page({jsonName:'createKnowCat'})"
 }

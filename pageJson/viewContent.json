@@ -21,7 +21,7 @@
         "action": "redirect",
         "jsonPage": "editContent",
         "fieldsToSend": ["_id"],
-        "callFindOne": "Destination/getOneContent"
+        "callFindOne": "Metal/getOneContent"
     }, {
         "name": "delete",
         "icon": "delete",
@@ -29,35 +29,29 @@
         "action": "apiCallConfirm",
         "title": "Delete Content",
         "content": "Are you sure you want to delete Content?",
-        "api": "Destination/deleteContent",
+        "api": "Metal/deleteContent",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
         }]
     }],
     "apiCall": {
-        "url": "Destination/getContent",
+        "url": "Metal/getContent",
         "params": ""
     },
     "createButtonState": "page({jsonName:'createContent'})",
     "sidemenu": [{
-          "name": "Destination",
+          "name": "Metal",
           "action": "sidemenuRedirect",
-          "jsonPage": "editDestination",
+          "jsonPage": "editMetal",
           "fieldsToSend": [1],
-          "callFindOne": "Destination/getOne"
-      }, {
-          "name": "Accomodation",
-          "action": "sidemenuRedirect",
-          "jsonPage": "viewAccomodation",
-          "fieldsToSend": [1],
-          "callFindOne": "Destination/getAccomodation"
+          "callFindOne": "Metal/getOne"
       },{
             "name": "Content",
             "action": "sidemenuRedirect",
             "jsonPage": "viewContent",
             "fieldsToSend": [1],
-            "callFindOne": "Destination/getContent"
+            "callFindOne": "Metal/getContent"
         }]
 
 }

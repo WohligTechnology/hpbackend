@@ -1,24 +1,16 @@
 {
-    "title": "Destination",
+    "title": "Reaction",
     "desciption": "",
     "pageType": "view",
+    "sortable": "Reaction/sort",
     "fields": [{
         "name": "Name",
+        "type": "text",
         "isSort": "",
         "tableRef": "name"
     },{
-        "name": "Banner",
-        "type": "image",
-        "isSort": "",
-        "tableRef": "banner"
-    },{
-        "name": "Image",
-        "type": "image",
-        "isSort": "",
-        "tableRef": "image"
-    },{
         "name": "Status",
-        "type":"status",
+        "type": "text",
         "isSort": "",
         "tableRef": "status"
     }],
@@ -27,25 +19,25 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editDestination",
+        "jsonPage": "editReaction",
         "fieldsToSend": ["_id"],
-        "callFindOne": "Destination/getone"
+        "callFindOne": "Reaction/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Tag",
-        "content": "Are you sure you want to delete Tag?",
-        "api": "Destination/delete",
+        "title": "Delete Reaction",
+        "content": "Are you sure you want to delete Reaction?",
+        "api": "Reaction/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
         }]
     }],
     "apiCall": {
-        "url": "Destination/search",
+        "url": "Reaction/search",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createDestination'})"
+    "createButtonState": "page({jsonName:'createReaction'})"
 }

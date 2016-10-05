@@ -57,7 +57,7 @@
           "model":"parent"
      },{
         "name": "Description",
-        "type": "tinymce",
+        "type": "tinymceImage",
         "tableRef": "description",
         "model": "description",
         "placeholder": "Enter Description",

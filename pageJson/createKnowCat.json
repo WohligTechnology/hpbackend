@@ -1,6 +1,6 @@
 {
-    "title": "Create Category",
-    "jsonPage": "viewCategory",
+    "title": "Create KnowCat",
+    "jsonPage": "viewKnowCat",
     "desciption": "",
     "pageType": "create",
     "fields": [{
@@ -22,34 +22,24 @@
     "validation": ["required", "trim", "unique"],
     "url": ""
     },{
-      "name": "Thumbnail",
-      "type": "image",
-      "tableRef": "Thumbnail",
-      "option": "single",
-      "size":"1920 X 963..",
-      "placeholder": "Enter Thumbnail",
-      "id": "input1",
-      "validation": ["required", "trim", "unique"],
-      "url": ""
-      },{
-          "name": "Parent Category",
-          "type": "selectFromTable",
-          "option":"single",
-          "tableRef": "parent",
-          "dropDownName":"name",
-          "placeholder": "Enter Category-Name",
-          "id": "input1",
-          "validation": ["required", "trim", "unique"],
-          "url": "Category/search"
-     },{
-        "name": "Description",
-        "type": "tinymceImage",
-        "tableRef": "description",
-        "placeholder": "Enter Description",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    },{
+       "name": "Description",
+       "type": "tinymceImage",
+       "tableRef": "description",
+       "placeholder": "Enter Description",
+       "id": "input1",
+       "validation": ["required", "trim", "unique"],
+       "url": ""
+   },{
+       "name": "Parent KnowCat",
+       "type": "selectFromTable",
+       "option":"single",
+       "tableRef": "reaction",
+       "dropDownName":"name",
+       "placeholder": "Enter KnowCat-Name",
+       "id": "input1",
+       "validation": ["required", "trim", "unique"],
+       "url": "Reaction/search"
+  },{
         "name": "Status",
         "type": "select",
         "tableRef": "status",
@@ -69,10 +59,10 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewCategory'})"
+        "stateName": "page({jsonName:'viewKnowCat'})"
     }],
 
     "apiCall": {
-        "url": "Category/save"
+        "url": "KnowCat/save"
     }
 }

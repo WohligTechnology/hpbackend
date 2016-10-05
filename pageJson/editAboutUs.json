@@ -1,6 +1,6 @@
 {
-    "title": "Edit Sub-Category",
-    "jsonPage": "viewSubCategory",
+    "title": "Edit AboutUs",
+    "jsonPage": "viewAboutUs",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -13,35 +13,36 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "_id"
-    }, {
-        "name": "Category-Name",
-        "type": "selectFromTable",
-        "tableRef": "category",
-        "option":"single",
-        "placeholder": "Enter Category-Name",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "category/getAll",
-        "model": "category"
-    }, {
-        "name": "Sub-Category-Name",
+    },{
+        "name": "name",
         "type": "text",
-        "tableRef": "subCatName",
-        "model": "subCatName",
-        "placeholder": "Enter Sub-Category-Name",
+        "tableRef": "name",
+        "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
+        "url": "",
+        "model": "name"
+    },{
+    "name": "Banner",
+    "type": "image",
+    "tableRef": "banner",
+    "option": "single",
+    "size":"1920 X 963..",
+    "placeholder": "Enter Banner",
+    "id": "input1",
+    "validation": ["required", "trim", "unique"],
+    "url": "",
+    "model": "banner"
+    },{
         "name": "Description",
         "type": "tinymceImage",
-        "tableRef": "subCatDescription",
-        "model": "subCatDescription",
+        "tableRef": "description",
+        "model": "description",
         "placeholder": "Enter Description",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
+    },{
         "name": "Status",
         "type": "select",
         "tableRef": "status",
@@ -59,17 +60,17 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitSubCategory"
+        "action": "submitTags"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewSubCategory'})"
+        "stateName": "page({jsonName:'viewAboutUs'})"
     }],
     "apiCall": {
-        "url": "SubCategory/savedata",
+        "url": "AboutUs/save",
         "params": "_id"
     },
     "preApi": {
-        "url": "SubCategory/getOne",
+        "url": "AboutUs/getOne",
         "params": "_id"
     }
 }

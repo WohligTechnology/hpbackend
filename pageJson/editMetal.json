@@ -1,6 +1,6 @@
 {
-    "title": "Edit Videos",
-    "jsonPage": "viewVideos",
+    "title": "Edit Metal",
+    "jsonPage": "viewMetal",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -14,25 +14,14 @@
         "url": "",
         "model": "_id"
     },{
-        "name": "URL",
+        "name": "name",
         "type": "text",
-        "tableRef": "url",
-        "placeholder": "Enter URL",
+        "tableRef": "name",
+        "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "url"
-    },{
-        "name": "Thumbnail",
-        "type": "image",
-        "option":"single",
-        "size": "351 X 239",
-        "tableRef": "thumbnail",
-        "placeholder": "Enter Thumbnail Image",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "thumbnail"
+        "model": "name"
     },{
         "name": "Status",
         "type": "select",
@@ -51,17 +40,30 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitVideos"
+        "action": "submitTags"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewVideos'})"
+        "stateName": "page({jsonName:'viewMetal'})"
     }],
     "apiCall": {
-        "url": "WhatsHot/saveVideos",
+        "url": "Metal/save",
         "params": "_id"
     },
     "preApi": {
-        "url": "WhatsHot/getOneVideos",
+        "url": "Metal/getOne",
         "params": "_id"
-    }
+    },
+    "sidemenu": [{
+          "name": "Metal",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editMetal",
+          "fieldsToSend": [1],
+          "callFindOne": "Metal/getOne"
+      },{
+            "name": "Content",
+            "action": "sidemenuRedirect",
+            "jsonPage": "viewContent",
+            "fieldsToSend": [1],
+            "callFindOne": "Metal/getContent"
+        }]
 }

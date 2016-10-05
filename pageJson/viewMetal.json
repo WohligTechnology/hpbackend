@@ -1,20 +1,16 @@
 {
-    "title": "Sub Category",
+    "title": "Metal",
     "desciption": "",
-    "sortable":"SubCategory/sort",
     "pageType": "view",
+    "sortable": "Metal/sort",
     "fields": [{
-        "name": "Category-Name",
-        "isSort": "",
+        "name": "Name",
         "type": "text",
-        "tableRef": "category.name"
-    },{
-        "name": "Sub-Category-Name",
         "isSort": "",
-        "type": "text",
-        "tableRef": "subCatName"
+        "tableRef": "name"
     },{
         "name": "Status",
+        "type": "text",
         "isSort": "",
         "tableRef": "status"
     }],
@@ -23,25 +19,25 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editSubCategory",
+        "jsonPage": "editMetal",
         "fieldsToSend": ["_id"],
-        "callFindOne": "SubCategory/getone"
+        "callFindOne": "Metal/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete SubCategory",
-        "content": "Are you sure you want to delete SubCategory?",
-        "api": "SubCategory/delete",
+        "title": "Delete Metal",
+        "content": "Are you sure you want to delete Metal?",
+        "api": "Metal/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
         }]
     }],
     "apiCall": {
-        "url": "SubCategory/getLimited",
+        "url": "Metal/search",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createSubCategory'})"
+    "createButtonState": "page({jsonName:'createMetal'})"
 }
