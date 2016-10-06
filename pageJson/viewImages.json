@@ -1,0 +1,57 @@
+{
+    "title": "View Images",
+    "desciption": "",
+    "sendIdWithCreate": true,
+    "pageType": "view",
+    "fields": [{
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image"
+    },{
+        "name": "Status",
+        "type": "status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editImages",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Category/getOneImages"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Images",
+        "content": "Are you sure you want to delete Images?",
+        "api": "Category/deleteImages",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Category/getImages",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createImages'})",
+    "sidemenu": [{
+          "name": "Category",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editCategory",
+          "fieldsToSend": [1],
+          "callFindOne": "Category/getOne"
+      },{
+            "name": "Images",
+            "action": "sidemenuRedirect",
+            "jsonPage": "viewImages",
+            "fieldsToSend": [1],
+            "callFindOne": "Category/getImages"
+        }]
+
+}

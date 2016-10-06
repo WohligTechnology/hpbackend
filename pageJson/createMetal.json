@@ -13,6 +13,16 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     },{
+        "name": "Reaction",
+        "type": "selectFromTable",
+        "option":"single",
+        "tableRef": "reaction",
+        "dropDownName":"name",
+        "placeholder": "Enter Category-Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "Reaction/search"
+   },{
         "name": "Status",
         "type": "select",
         "tableRef": "status",

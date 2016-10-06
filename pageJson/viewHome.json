@@ -3,18 +3,10 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
-        "name":"Banner Name",
-        "isSort": "",
-        "tableRef": "name"
-    },{
         "name": "Banner Image",
         "type": "image",
         "isSort": "",
         "tableRef": "banner"
-    },{
-        "name":"Image Name",
-        "isSort": "",
-        "tableRef": "imgname"
     },{
         "name": "Image",
         "type": "image",

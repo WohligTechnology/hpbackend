@@ -27,7 +27,7 @@
     "type": "image",
     "tableRef": "banner",
     "option": "single",
-    "size":"1920 X 963..",
+    "size":"1660 X 432",
     "placeholder": "Enter Banner",
     "id": "input1",
     "validation": ["required", "trim", "unique"],
@@ -36,14 +36,14 @@
     },{
       "name": "Thumbnail",
       "type": "image",
-      "tableRef": "Thumbnail",
+      "tableRef": "thumbnail",
       "option": "single",
-      "size":"1920 X 963..",
+      "size":"432 X 432",
       "placeholder": "Enter Thumbnail",
       "id": "input1",
       "validation": ["required", "trim", "unique"],
       "url": "",
-      "model": "Thumbnail"
+      "model": "thumbnail"
       },{
           "name": "Parent Category",
           "type": "selectFromTable",
@@ -94,5 +94,18 @@
     "preApi": {
         "url": "Category/getOne",
         "params": "_id"
-    }
+    },
+    "sidemenu": [{
+          "name": "Category",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editCategory",
+          "fieldsToSend": [1],
+          "callFindOne": "Category/getOne"
+      },{
+            "name": "Images",
+            "action": "sidemenuRedirect",
+            "jsonPage": "viewImages",
+            "fieldsToSend": [1],
+            "callFindOne": "Category/getImages"
+        }]
 }

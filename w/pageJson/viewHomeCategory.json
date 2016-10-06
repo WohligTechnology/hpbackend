@@ -1,0 +1,56 @@
+{
+    "title": "Home Category",
+    "desciption": "",
+    "sendIdWithCreate": true,
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "category.image"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editHomeCategory",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Home/getHomeCategory"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Category",
+        "content": "Are you sure you want to delete Category?",
+        "api": "Home/deleteHomeCategory",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "home/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createHomeCategory'})",
+    "sidemenu": [{
+          "name": "Home",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editHome",
+          "fieldsToSend": [1],
+          "callFindOne": "Home/getOne"
+      },{
+          "name": "Category",
+          "action": "sidemenuRedirect",
+          "jsonPage": "viewHomeCategory",
+          "fieldsToSend": [1],
+          "callFindOne": "Home/getCategory"
+      }]
+}

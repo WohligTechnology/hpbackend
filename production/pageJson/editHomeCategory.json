@@ -1,0 +1,44 @@
+{
+    "title": "Edit HomeCategory",
+    "jsonPage": "viewHomeCategory",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Category",
+        "type": "selectFromTable",
+        "option": "single",
+        "tableRef": "Category",
+        "dropDownName":"name",
+        "placeholder": "Enter Category",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "Category/search",
+        "model":"Category"
+    },{
+        "name": "Image",
+        "type": "image",
+        "size": "413 x 413...",
+        "option": "single",
+        "tableRef": "image",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model":"image"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitOneHomeCategory"
+    }, {
+        "name": "cancel"
+    }],
+    "apiCall": {
+        "url": "Home/saveHomeCategory",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Home/getOneHomeCategory",
+        "params": "_id"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "title": "Metal",
+    "desciption": "",
+    "pageType": "view",
+    "sortable": "Metal/sort",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Status",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editMetal",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Metal/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Metal",
+        "content": "Are you sure you want to delete Metal?",
+        "api": "Metal/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Metal/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createMetal'})"
+}

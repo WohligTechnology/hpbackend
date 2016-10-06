@@ -1,0 +1,47 @@
+{
+    "title": "AboutUs",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Banner",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "banner"
+    },{
+        "name": "Status",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editAboutUs",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "AboutUs/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete AboutUs",
+        "content": "Are you sure you want to delete AboutUs?",
+        "api": "AboutUs/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "AboutUs/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createAboutUs'})"
+}

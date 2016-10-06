@@ -1,0 +1,50 @@
+{
+    "title": "Home",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name":"Banner Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Banner Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "banner"
+    },{
+        "name":"Image Name",
+        "isSort": "",
+        "tableRef": "imgname"
+    },{
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editHome",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Home/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Home",
+        "content": "Are you sure you want to delete Home?",
+        "api": "Home/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Home/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createHome'})"
+}
